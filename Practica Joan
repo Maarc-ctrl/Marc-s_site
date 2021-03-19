@@ -1,0 +1,155 @@
+
+var num=[];
+var estrelles=[];
+var numguanyador=[];
+var estrellesguanyadores=[];
+
+
+function generar_num(){
+	while(numguanyador.length < 5){
+		var n=Math.floor((Math.random()*50+1));	//Floor para redondear, random para generar numeros aleatorios y *50 + 1 para generarlos del 1 al 50
+		console.log(n);
+	
+		if (numguanyador.indexOf(n) == -1) { //Comprovamos que el numero no este introducido en el array
+			numguanyador.push(n); //Si no esta repetido lo añadimos en la ultima posicion del array (num.length) y le pasamos el valor guardado anteriormente (n)
+			}
+		}
+			numguanyador=numguanyador.sort((A,B)=>A-B);
+	while(estrellesguanyadores.length < 2){
+		var m=Math.floor((Math.random()*12+1));	//Floor para redondear, random para generar numeros aleatorios y *50 + 1 para generarlos del 1 al 50
+		console.log(m);
+	
+
+		if (estrellesguanyadores.indexOf(m) == -1) { //Comprovamos que el numero no este introducido en el array
+			estrellesguanyadores.push(m); //Si no esta repetido lo añadimos en la ultima posicion del array (num.length) y le pasamos el valor guardado anteriormente(n)
+			}
+		}
+		document.write("<br>La combinació de numeros guanyadora és "+numguanyador+"<br>");
+
+}
+
+function generar_estrelles() {
+	while(estrellesguanyadores.length < 2){
+	var m=Math.floor((Math.random()*12+1));	//Floor para redondear, random para generar numeros aleatorios y *50 + 1 para generarlos del 1 al 50
+	console.log(m);
+	
+
+	if (estrellesguanyadores.indexOf(m) == -1) { //Comprovamos que el numero no este introducido en el array
+			estrellesguanyadores.push(m); //Si no esta repetido lo añadimos en la ultima posicion del array (num.length) y le pasamos el valor guardado anteriormente(n)
+			}
+		}
+		console.log(estrellesguanyadores);
+		estrellesguanyadores=estrellesguanyadores.sort((A,B)=>A-B);
+		document.write("<br>La combinació d'estrelles guanyadora és "+estrellesguanyadores);
+
+	}
+function hora(){ //Creació de la funcio per a obtindre l'hora
+ 		var dia=["dilluns","Dimarts","Dimecres","Dijous","Divendres","Dissabte","Diumenge"];
+ 		var mes=["Gener","Febrer","Març","Abril","Maig","Juny","Juliol","Agost","Septembre","Octubre","Novembre","Desembre"];
+
+ 		var data=new Date();
+ 		document.write("<br><br>  Avui és "+dia[data.getDay()-1]+" "+data.getDate()+" "+" de "+mes[data.getMonth()-1]+" "+data.getFullYear()+" "+" i són les "+data.getHours()+":"+data.getMinutes()+" Hores<br>");
+ 	}
+
+/*function demanar_num(){
+	var salir=true;
+	do{
+		var x = document.getElementById("nnum").value;
+ 	while(isNaN(x)){ //Comprovem que el valor introduit per pantalla es un numeric
+ 		alert("Has d'introduir un nombre ");
+ 		var x = prompt("Introdueix els nombres que vulguis jugar");
+ 		}
+ 	while(x>50||x<=0){
+ 		alert("Has d'introduir un nombre entre el 1 i el 50");
+ 		var x = prompt("Introdueix els nombres que vulguis jugar");
+
+ //CREC QUE NO ME FUNCIONA PERO POR AHÍ VAN LOS TIROS	
+ 	if(num.indexOf(x) == -1) { //Comprovamos que el numero no este introducido en el array
+			num.push(x); //Si no esta repetido lo añadimos en la ultima posicion del array (num.length) y le pasamos el valor guardado anteriormente (n)
+		}if(num.indexOf(x) !== -1) { //Comprovació si el nombre ja està introduit a l'array
+			alert("No pots repetir un nombre ");
+		}
+	}
+
+	num.push(x);//afegir els nombres introduits al array
+	num=num.slice(" "); //Substituim els espais introduits al prompt
+	num=num.map(Number);//Pasem el array a tipus number
+ 	num=num.sort((A,B)=>A-B); //Ordenem l'array
+ 	console.log(num);
+}while(salir==true);
+	
+}*/
+
+/*function demanar_estrelles(){
+	var salir=true;
+	do{
+		var j = document.getElementById("jestrelles").value;
+ 	while(isNaN(j)){ //Comprovem que el valor introduit per pantalla es un numeric
+ 		alert("Has d'introduir un nombre ");
+ 		var j = prompt("Introdueix els nombres que vulguis jugar");
+ 		}
+ 	while(j>12||j<=0){
+ 		alert("Has d'introduir un nombre entre el 1 i el 50");
+ 		var j = prompt("Introdueix els nombres que vulguis jugar");
+
+ //CREC QUE NO ME FUNCIONA PERO POR AHÍ VAN LOS TIROS	
+ 	if(num.indexOf(j) == -1) { //Comprovamos que el numero no este introducido en el array
+			num.push(j); //Si no esta repetido lo añadimos en la ultima posicion del array (num.length) y le pasamos el valor guardado anteriormente (n)
+		}if(num.indexOf(j) !== -1) { //Comprovació si el nombre ja està introduit a l'array
+			alert("No pots repetir un nombre ");
+		}
+	}
+
+	estrelles.push(j);//afegir els nombres introduits al array
+	estrelles=estrelles.slice(" "); //Substituim els espais introduits al prompt
+	estrelles.map(Number);//Pasem el array a tipus number
+ 	estrelles=estrelles.sort((A,B)=>A-B); //Ordenem l'array
+ 	console.log(estrelles);
+}while(salir==true);
+
+}*/
+function comprovar(){
+	var x = document.getElementById("xxx").value;
+	num.push(x);
+	var j = document.getElementById("jestrelles").value;
+	estrelles.push(j);
+	num=num.slice(" ");
+	console.log(num);
+	var nuevo = num.map((i) => Number(i));
+	console.log(nuevo);
+	//num=num.map(Number);
+	num=num.sort((A,B)=>A-B); //Ordenem l'array
+	estrelles=estrelles.slice(" ");
+	var nuevo2 = estrelles.map((h) => Number(h));
+	console.log(nuevo2);
+	//estrelles=estrelles.map(Number);
+	estrelles=estrelles.sort((A,B)=>A-B); //Ordenem l'array
+
+	console.log(x);
+	console.log(j);
+	if(num.every(function(x,y){return x===numguanyador[y]})&&estrelles.every(function(x,y){return x===estrellesguanyadores[y]})){ //Creació de la funció per a comparar els arrays
+
+		alert("Enhorabona La combinació"+" "+num+ "  " +estrelles+" "+"es la guanyadora");
+	}
+	else{
+		alert("La combinació introduida no és la correcte ");
+		alert("La combinació correcte és "+numguanyador+ " "+estrellesguanyadores);
+		alert(" I la teva combinació és " +num+ " "+estrelles);
+
+		}
+	
+	}
+hora();
+generar_num();
+generar_estrelles();
+/*hora();
+generar_num();
+generar_estrelles();
+demanar_num();
+demanar_estrelles();*/
+
+
+
+
+
+
